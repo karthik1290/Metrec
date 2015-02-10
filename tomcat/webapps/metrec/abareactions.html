@@ -1,0 +1,161 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title src="">MetRec</title>
+  <link rel="shortcut icon" href="images/download.jpg" type="image/png"/>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!-- modernizr enables HTML5 elements and feature detects -->
+  <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+   <style>
+  table
+{
+font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+font-size:14px;
+text-align:left;
+width:100%;
+border-collapse: collapse;
+}
+th
+{
+background: rgb(255,255,255);
+padding: 5px;
+font-size:15px;
+border-bottom: 4px ridge rgba(102,120,177,.5)
+}
+th:nth-child(n+2){ border-left: 2px ridge rgba(102,120,177,.5);}
+td:nth-child(n+2){ border-left: 2px ridge rgba(102,120,177,.5);}
+tr:nth-child(2n) { background: rgba(100,100,160,.1);}
+tr:nth-child(2n+1) { background: rgba(50,50,130,.02);}
+tr:last-child { border-bottom: 5px ridge rgba(102,120,177,.5);}
+</style>
+ 
+ </head>
+<body>
+	<header id="header" class="site-header" role="banner">
+    <div id="header-inner" class="container sixteen columns over">
+    <hgroup class="one-third column alpha">
+    <h1 id="site-title" class="site-title">
+    <a id="logo"><img src="images/metrec.jpg" alt="Phylopro logo" height="63" width="157" /></a>
+    </h1>
+    </hgroup>
+    <nav id="main-nav" class="two thirds column omega">
+    <ul id="main-nav-menu" class="nav-menu">
+    <li id="menu-item-1" class="current">
+    <a href="index.html">Home</a>
+    </li>
+    <li id="menu-item-2">
+    <a href="organisms.jsp">Organisms</a>
+    </li>
+    <li id="menu-item-3">
+    <a href="faqs.html">FAQs</a>
+    </li>
+    <li id="menu-item-4">
+    <a href="help.html">Help</a>
+    </li>
+    </ul>
+    </nav>
+    </div>
+    </header>
+<script>
+if (window.XMLHttpRequest)
+{// code for IE7+, Firefox, Chrome, Opera, Safari
+xmlhttp=new XMLHttpRequest();
+}
+else
+{// code for IE6, IE5
+xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+}
+xmlhttp.open("GET","abamodel.xml",false);
+xmlhttp.send();
+xmlDoc=xmlhttp.responseXML;
+
+//Reaction summary
+var z=xmlDoc.getElementsByTagName("reaction");
+document.write("<table border='1'>");
+document.write(" <tr> <th>Reaction ID</th><th>Reaction name</th> <th>Reversibility</th><th>GPR</th><th>Equation:</th></tr>")
+for( var j=0;j<z.length;j++)
+	{
+	document.write("<tr><td>");
+	att=z.item(j).attributes.getNamedItem("id");
+	var i = att.value.indexOf('_');
+	var splits = [att.value.slice(i+1)];
+	//document.write("<a href=\"" + splits + ".html" + "\">");
+	document.write(splits);
+	document.write("</td><td>");
+	att=z.item(j).attributes.getNamedItem("name");
+	document.write(att.value);
+	document.write("</td><td>");
+	 att=z.item(j).attributes.getNamedItem("reversible");
+	 if (att != null)
+	 document.write(att.value);
+	 else
+	document.write("true");
+	document.write("</td><td>")
+    att=z.item(j).getElementsByTagName("p")[0].childNodes[0].nodeValue
+    document.write((att.split(":")[1]));
+    document.write("</td>")
+    var parent = xmlDoc.getElementsByTagName('reaction')[j];
+    var lists = parent.getElementsByTagName("listOfReactants"); 
+    if (lists.length != 0)
+        for (var i = 0; i < lists.length; ++i) {
+     	 
+     	    document.write("<td>");
+            var y = lists[i].getElementsByTagName("speciesReference");
+        	    for(k=0;k<y.length;k++) {
+        	    	g=y.length -1
+        	        att=y.item(k).attributes.getNamedItem("stoichiometry");
+        	        if (att != null)
+        	        document.write(att.value);
+        	        else
+        	        document.write(" ");	 
+        	        att=y.item(k).attributes.getNamedItem("species");
+        	        link=(att.value).split("_")[1]
+        	        document.write("<a href=\"" + link + ".html" + "\">");
+        	        document.write("  "+link);
+        	        document.write("</a>");
+        	        if (k < g)
+        	        document.write("+");
+        	        else
+        	        document.write("");
+        	        
+        	    }
+   
+        } 
+    else
+    	document.write("<td>");
+        var lists = parent.getElementsByTagName("listOfProducts");
+        for (var i = 0; i < lists.length; ++i) {
+     	 
+     	    document.write("-->");
+            var y = lists[i].getElementsByTagName("speciesReference");
+        	    for(k=0;k<y.length;k++) {
+        	    	g=y.length -1
+        	        att=y.item(k).attributes.getNamedItem("stoichiometry");
+        	        if (att != null)
+        	        document.write(att.value);
+        	        else
+        	        document.write(" ");	 
+        	        att=y.item(k).attributes.getNamedItem("species");
+        	        link=(att.value).split("_")[1]
+        	        document.write("<a href=\"" + link + ".html" + "\">");
+        	        document.write(" "+link);
+        	        document.write("</a>");
+        	        if (k < g)
+            	    document.write("+");
+            	    else
+            	    document.write("");
+        	    }
+   
+        	 document.write("</td>");
+        }   
+	}
+document.write("</table>");
+
+
+
+
+  
+</script>
+
+</body>
+</html>

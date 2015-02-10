@@ -1,0 +1,188 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+      
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title src="">MetRec</title>
+  <link rel="shortcut icon" href="images/download.jpg" type="image/png"/>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!-- modernizr enables HTML5 elements and feature detects -->
+  <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+ <style>
+
+  table
+{
+font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+font-size:14px;
+text-align:left;
+width:100%;
+border-collapse: collapse;
+}
+th
+{
+background: rgb(255,255,255);
+padding: 5px;
+font-size:15px;
+border-bottom: 4px ridge rgba(102,120,177,.5)
+}
+th:nth-child(n+2){ border-left: 2px ridge rgba(102,120,177,.5);}
+td:nth-child(n+2){ border-left: 2px ridge rgba(102,120,177,.5);}
+tr:nth-child(2n) { background: rgba(100,100,160,.1);}
+tr:nth-child(2n+1) { background: rgba(50,50,130,.02);}
+tr:last-child { border-bottom: 5px ridge rgba(102,120,177,.5);}
+
+ 
+img.top {vertical-align:text-middle;}</style>
+ </head>
+<body style="font-family:Verdana,Bitstream Vera Sans,Geneva;font-size:small;">
+
+
+	<header id="header" class="site-header" role="banner">
+    <div id="header-inner" class="container sixteen columns over">
+    <hgroup class="one-third column alpha">
+    <h1 id="site-title" class="site-title">
+    <a id="logo"><img src="images/metrec.jpg" alt="MetRec" height="63" width="157" /></a>
+    </h1>
+    </hgroup>
+    <nav id="main-nav" class="two thirds column omega">
+    <ul id="main-nav-menu" class="nav-menu">
+    <li id="menu-item-1" class="current">
+    <a href="#">Home</a>
+    </li>
+    <li id="menu-item-2">
+    <a href="organisms.jsp">Organisms</a>
+    </li>
+    <li id="menu-item-3">
+    <a href="faqs.html">FAQs</a>
+    </li>
+    <li id="menu-item-4">
+    <a href="help.html">Help</a>
+    </li>
+    </ul>
+    </nav>
+    </div>
+    </header>
+
+
+	
+	<div id="site_content">			   
+	    <div id="content">
+        <div class="content_item">
+        
+
+<!-- <script type="text/javascript">
+
+    function goToProperPage() {
+        var url;
+        var location = document.getElementById("my-dropdown").selectedIndex;
+        if (location == 0) {
+            url = '#';
+        }
+        else if (location == 1) {
+            url = 'ecoli.html';
+        }
+        else if (location == 2) {
+            url = 'myco.html';
+        }
+        else if (location == 3) {
+            url = 'helico.html';
+        }
+        else if (location == 4) {
+            url = 'kleb.html';
+        }
+        else if (location == 5) {
+            url = 'mycoplasma.html';
+        }
+        else if (location == 6) {
+            url = 'sau.html';
+        }
+        else if (location == 7) {
+            url = 'sal.html';
+        }
+        window.location.href=url;
+    }
+
+</script> -->
+
+
+<ol id="toc1">
+    <li><a><span>Database of <b>Met</b>abolic <b>Rec</b>onstructions </span></a></li>
+     </ol>
+     <div style="border:2px solid black">
+    <div align="center"><h3>Please select a model(click on the organism link)</h3>
+ <table border="1" align="center">
+      <tr> </tr>
+<tr>
+<th>Organism name</th>
+<th>Strain name</th>
+<th>Reference(PMID)</th>
+<th>Model ID</th>
+
+</tr>
+<tr><td><a href="ecoli.html"><i>Escherichia coli</i></a></td><td>K-12 MG1655</td><td><a href="http://www.ncbi.nlm.nih.gov/pubmed/21988831">Orth et al.(21988831)</a></td><td>iJO1366</td></tr>
+<tr><td><a href="myco.html"><i>Mycobacterium tuberculosis</i></a></td><td>H37Rv</td><td><a href="http://www.ncbi.nlm.nih.gov/pubmed/17555602">Jamshidi and Palsson(17555602)</a></td><td>iNJ661</td></tr>
+<tr><td><a href="helico.html"><i>Helicobacter pylori</i></a></td><td>26695</td><td><a href="http://www.ncbi.nlm.nih.gov/pubmed/16077130">Thiele et al.(16077130)</a></td><td>iIT341</td></tr>
+<tr><td><a href="kleb.html"><i>Klebsiella pneumoniae</i></a></td><td>MGH78578</td><td><a href="http://www.ncbi.nlm.nih.gov/pubmed/21296962">Liao et al.(21296962)</a></td><td>iYL1228</td></tr>
+<tr><td><a href="sau.html"><i>Staphylococcus aureus</i></a></td><td>N315</td><td><a href="http://www.ncbi.nlm.nih.gov/pubmed/15752426">Becker and Palsson(15752426)</a></td><td>iSB619</td></tr>
+<tr><td><a href="sal.html"><i>Salmonella</i> Typhimurium</a></td><td>LT2</td><td><a href="http://www.ncbi.nlm.nih.gov/pubmed/21244678">Thiele et al.(21244678)</a></td><td>STM_v1.0</td></tr>
+<tr><td><a href="mycoplasma.html"><i>Mycoplasma genitalium</i></a></td><td>G-37</td><td><a href="http://www.ncbi.nlm.nih.gov/pubmed/19214212">Suthers et al.(19214212)</a></td><td>iPS189</td></tr>
+<tr><td><a href="yersinia.html"><i>Yersinia pestis</i></a></td><td>CO92</td><td><a href="http://www.ncbi.nlm.nih.gov/pubmed/21995956">Charusanti and Palsson(21995956)</a></td><td>iPC815</td></tr>
+<tr><td><a href="aba.html"><i>Acinetobacter baumannii</i></a></td><td>AYE</td><td><a href="http://www.ncbi.nlm.nih.gov/pubmed/20094653">Kim et al.(20094653)</a></td><td>AbyMBEL891</td></tr>
+<tr><td><a href="bur.html"><i>Burkholderia cenocepacia</i></a></td><td>J2315</td><td><a href="http://www.ncbi.nlm.nih.gov/pubmed/21609491">Fang et al.(21609491)</a></td><td>iKF1028</td></tr>
+<tr><td><a href="nme.html"><i>Neisseria meningitidis</i></a></td><td>MC58</td><td><a href="http://www.ncbi.nlm.nih.gov/pubmed/22208880">Mendum et al.(22208880)</a></td><td>Nmb_iTM560</td></tr>
+<tr><td><a href="pseudo.html"><i>Pseudomonas aeruginosa</i></a></td><td>PA01</td><td><a href="http://www.ncbi.nlm.nih.gov/pubmed/18192387">Oberhardt et al.(18192387)</a></td><td>iMO1056</td></tr>
+</table>
+    
+ </div>
+ </div>
+ <br></br>
+ <!--    <select id="my-dropdown" name="my-dropdown">
+        <option value="0">Select one from below</option>
+        <option value="1">Escherichia coli</option>
+        <option value="2">Mycobacterium tuberculosis</option>
+        <option value="3">Helicobacter pylori</option>
+        <option value="4">Klebsiella pneumoniae</option>
+        <option value="5">Mycoplasma genitalium</option>
+        <option value="6">Staphylococcus aureus</option>
+        <option value="7">Salmonella typhimurium</option>
+    </select> -->
+  
+  <div>        
+    
+ <ol id="toc">
+    <li><a href="#index1"><span>Funding</span></a></li>
+    <li><a href="#index2"><span>Acknowledgements</span></a></li>
+    <li><a href="#index3"><span>Contact Us</span></a></li>
+</ol>
+<div class="content1" id="index1">
+    <p><img class="top" style="width:100px; height:100px; display:block; float:left;" src="images/iitm.JPG" /><p style="height:80px;"><br /> Funding from IIT Madras, and the grant <b>BT/PR4949/BRB/10/1048/2012 from Department of Biotechnology</b>,Government of India, are gratefully acknowledged.</p>
+</div>
+<div class="content1" id="index2"><br> </br>
+    <p>Curation of models and development of database servers are done by Ms. Priyanka Barman and Mr. Karthik Azhagesan.We thank Ms. Aarthi Ravikrishnan ,Ms. Aparajitha Srinivasan and Mr. Aditya Pratapa for their significant contributions in this project.</p>
+</div>
+<div class="content1" id="index3"><br></br>
+For any queries, suggestions, and feedback, please email us
+                <br><img style="display:block; float:left;" src="images/mail.Png" />
+                <br></br>
+</div>
+
+
+<script src="js/activatables.js" type="text/javascript"></script>
+<script type="text/javascript">
+activatables('index', ['index1', 'index2', 'index3']);
+</script> 
+ 	  
+	</div> 
+	
+	
+	</div><!--close content_item-->
+      </div><!--close content-->   
+	</div><!--close site_content-->  	
+
+
+
+
+ 
+</body>
+</html>

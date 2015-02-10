@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<javaee:web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns="http://java.sun.com/xml/ns/j2ee" 
+  xmlns:javaee="http://java.sun.com/xml/ns/javaee" 
+  xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" 
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" version="2.4"> <javaee:servlet>
+    <javaee:servlet-name>Faces Servlet</javaee:servlet-name>
+    <javaee:servlet-class>javax.faces.webapp.FacesServlet</javaee:servlet-class>
+  </javaee:servlet>
+  <javaee:servlet-mapping>
+    <javaee:servlet-name>Faces Servlet</javaee:servlet-name>
+    <javaee:url-pattern>/index/</javaee:url-pattern>
+  </javaee:servlet-mapping>
+  <javaee:context-param>
+    <javaee:param-name>javax.faces.PROJECT_STAGE</javaee:param-name>
+    <javaee:param-value>Development</javaee:param-value>
+  </javaee:context-param>
+  <javaee:welcome-file-list>
+    <javaee:welcome-file>index.html</javaee:welcome-file>
+  </javaee:welcome-file-list>
+</javaee:web-app>

@@ -1,0 +1,120 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title src="">MetRec</title>
+  <link rel="shortcut icon" href="images/download.jpg" type="image/png"/>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!-- modernizr enables HTML5 elements and feature detects -->
+  <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+  <style>
+  table
+{
+font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+font-size:14px;
+text-align:left;
+width:100%;
+border-collapse: collapse;
+}
+th
+{
+background: rgb(255,255,255);
+padding: 5px;
+font-size:15px;
+border-bottom: 4px ridge rgba(102,120,177,.5)
+}
+th:nth-child(n+2){ border-left: 2px ridge rgba(102,120,177,.5);}
+td:nth-child(n+2){ border-left: 2px ridge rgba(102,120,177,.5);}
+tr:nth-child(2n) { background: rgba(100,100,160,.1);}
+tr:nth-child(2n+1) { background: rgba(50,50,130,.02);}
+tr:last-child { border-bottom: 5px ridge rgba(102,120,177,.5);}
+</style>
+ 
+ </head>
+<body>
+	<header id="header" class="site-header" role="banner">
+    <div id="header-inner" class="container sixteen columns over">
+    <hgroup class="one-third column alpha">
+    <h1 id="site-title" class="site-title">
+    <a id="logo"><img src="images/metrec.jpg" alt="Phylopro logo" height="63" width="157" /></a>
+    </h1>
+    </hgroup>
+    <nav id="main-nav" class="two thirds column omega">
+    <ul id="main-nav-menu" class="nav-menu">
+    <li id="menu-item-1" class="current">
+    <a href="index.html">Home</a>
+    </li>
+    <li id="menu-item-2">
+    <a href="organisms.jsp">Organisms</a>
+    </li>
+    <li id="menu-item-3">
+    <a href="faqs.html">FAQs</a>
+    </li>
+    <li id="menu-item-4">
+    <a href="help.html">Help</a>
+    </li>
+    </ul>
+    </nav>
+    </div>
+    </header>	
+	  
+
+	   
+<script type="text/javascript">
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.open("GET","mycoplasmamodel.xml",false);
+xmlhttp.send();
+xmlDoc=xmlhttp.responseXML;
+ //Metabolite summary
+ document.write("<table border='1'>");
+ document.write(" <tr> <th>Metabolite ID</th><th>Compartment</td> <th>Metabolite Name</th><th>Formula</th><th>Charge</th></tr>")
+var x=xmlDoc.getElementsByTagName("species");
+for(i=0;i<x.length;i++)
+{
+document.write("<tr><td>");
+att=x.item(i).attributes.getNamedItem("id");
+link=((att.value).split("_"))[1]
+document.write("<a href=\"" + link + ".html" + "\">");
+document.write(link);
+document.write("</a></td><td>");
+att=x.item(i).attributes.getNamedItem("compartment");
+if (att.value == "c")
+document.write("Cytoplasm");
+else if (att.value == "e")
+document.write("Extracellular");
+else if (att.value == "p")
+document.write("Periplasm");
+document.write("</td><td>");
+att=x.item(i).attributes.getNamedItem("name");
+document.write(att.value);
+document.write("</td>");
+document.write("</td><td>")
+att=x[i].getElementsByTagName("p")[0].childNodes[0].nodeValue.replace(/(\d+)/g, "<sub>$1</sub>");
+document.write((att.split(":")[1]));
+document.write("</td><td>")
+att=x[i].getElementsByTagName("p")[1].childNodes[0].nodeValue
+document.write((att.split(":")[1]));
+document.write("</td>")
+}
+document.write("</table>");  
+
+
+
+
+
+
+
+
+  
+</script>
+	  
+
+
+</body>
+</html>

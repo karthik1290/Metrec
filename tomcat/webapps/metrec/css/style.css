@@ -1,0 +1,302 @@
+
+
+html
+{ height: 100%;}
+
+*
+{ margin: 0;
+  padding: 0;}
+
+body
+{ font: normal 90% Arial, Helvetica, sans-serif;
+  color: #000;
+}
+
+/* tell the browser to render HTML 5 elements as block */
+article, aside, figure, footer, header, hgroup, nav, section { 
+  display:block;
+}
+
+ 
+
+  
+span
+{ 
+  text-shadow: none;}
+
+/* #Links
+================================================== */
+	a, a:visited { color: #333; text-decoration: underline; outline: 0; }
+	a:hover, a:focus { color: #000; }
+	p a, p a:visited { line-height: inherit; }
+
+
+/* #Lists
+================================================== */
+	ul, ol { margin-bottom: 20px; }
+	ul { list-style: none outside; }
+	ol { list-style: decimal; }
+	ol, ul.square, ul.circle, ul.disc { margin-left: 30px; }
+	ul.square { list-style: square outside; }
+	ul.circle { list-style: circle outside; }
+	ul.disc { list-style: disc outside; }
+	ul ul, ul ol,
+	ol ol, ol ul { margin: 4px 0 5px 30px; font-size: 90%;  }
+	ul ul li, ul ol li,
+	ol ol li, ol ul li { margin-bottom: 6px; }
+	li { line-height: 4.2px; margin-bottom: 12px;margin-top:0;padding-top:0; }
+	ul.large li { line-height: 21px; }
+	li p { line-height: 21px; }
+	nav
+{ height: 60px;}  
+
+#main, header, #banner, #menubar, #site_content, footer, #content_grey, nav, #slideshow_container
+{ margin-left: auto; 
+  margin-right: auto;}
+ 
+        
+/* #Header
+================================================== */
+
+#header { border-bottom: 1px solid #E3E3E8; margin-bottom: 30px;display: block;	vertical-align: baseline; }
+h1 a { text-indent: -9999px; }
+#site-title { padding-top: 20px; }
+
+
+/* #Navigation
+================================================== */
+
+#main-nav { float: right;}
+#main-nav ul, #main-nav li { list-style: none; padding: 0; margin: 0; display: inline; } 
+#main-nav ul li { float: left; position: relative; }
+#main-nav ul li a { display: inline-block; padding: 48px 10px 34px 10px; margin: 0 5px; text-decoration: none; font-size: 12px; border-bottom: 3px solid transparent; }
+/*#main-nav ul li:hover { border-bottom: 3px solid #000 !important; }*/
+.current { font-weight: bold !important; color: #444 !important; }
+ 
+/* #Site Styles
+================================================== */
+
+a, a:visited { color: #000; transition: color 0.3s linear; -moz-transition: color 0.3s linear; -webkit-transition: color 0.3s linear; -o-transition: color 0.3s linear; }
+a:hover { color: #777; }
+ 
+
+  
+/* #Base 680 Grid
+================================================== */
+
+    .container                                  { position: relative; width: 680px; margin: 0 auto; padding: 0; }
+    .container .column,
+    .container .columns                         { float: left; display: inline; margin-left: 10px; margin-right: 10px; }
+    .row                                        { margin-bottom: 20px; }
+
+    /* Nested Column Classes */
+    .column.alpha, .columns.alpha               { margin-left: 0; }
+    .column.omega, .columns.omega               { margin-right: 0; }
+
+    /* Base Grid */
+    .container .one.column,
+    .container .one.columns                     { width: 20px;  }
+    .container .two.columns                     { width: 60px; }
+    .container .three.columns                   { width: 100px; }
+    .container .four.columns                    { width: 140px; }
+    .container .five.columns                    { width: 180px; }
+    .container .six.columns                     { width: 220px; }
+    .container .seven.columns                   { width: 260px; }
+    .container .eight.columns                   { width: 300px; }
+    .container .nine.columns                    { width: 340px; }
+    .container .ten.columns                     { width: 380px; }
+    .container .eleven.columns                  { width: 420px; }
+    .container .twelve.columns                  { width: 460px; }
+    .container .thirteen.columns                { width: 500px; }
+    .container .fourteen.columns                { width: 540px; }
+    .container .fifteen.columns                 { width: 580px; }
+    .container .sixteen.columns                 { width: 620px; }
+
+    .container .one-third.column                { width: 230px; }
+    .container .two-thirds.column               { width: 500px; }
+
+    /* Offsets */
+    .container .offset-by-one                   { padding-left: 40px;  }
+    .container .offset-by-two                   { padding-left: 80px; }
+    .container .offset-by-three                 { padding-left: 120px; }
+    .container .offset-by-four                  { padding-left: 160px; }
+    .container .offset-by-five                  { padding-left: 200px; }
+    .container .offset-by-six                   { padding-left: 240px; }
+    .container .offset-by-seven                 { padding-left: 280px; }
+    .container .offset-by-eight                 { padding-left: 320px; }
+    .container .offset-by-nine                  { padding-left: 360px; }
+    .container .offset-by-ten                   { padding-left: 400px; }
+    .container .offset-by-eleven                { padding-left: 440px; }
+    .container .offset-by-twelve                { padding-left: 480px; }
+    .container .offset-by-thirteen              { padding-left: 520px; }
+    .container .offset-by-fourteen              { padding-left: 560px; }
+    .container .offset-by-fifteen               { padding-left: 600px; }
+
+
+
+
+/* #Clearing
+================================================== */
+
+    /* Self Clearing Goodness */
+    .container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+
+    /* Use clearfix class on parent to clear nested columns,
+    or wrap each row of columns in a <div class="row"> */
+    .clearfix:before,
+    .clearfix:after,
+    .row:before,
+    .row:after {
+      content: '\0020';
+      display: block;
+      overflow: hidden;
+      visibility: hidden;
+      width: 0;
+      height: 0; }
+    .row:after,
+    .clearfix:after {
+      clear: both; }
+    .row,
+    .clearfix {
+      zoom: 1; }
+
+    /* You can also use a <br class="clear" /> to clear columns */
+    .clear {
+      clear: both;
+      
+    }
+
+ 
+
+
+#site_content
+{ width: 680px;
+  overflow: hidden;} 
+ 
+
+#content
+{ width: 680px;
+  margin: 0 0px 20px 0px;
+  float: left;
+  
+  }
+
+.content_item
+{ width: 680px;
+  margin-top: 20px;
+  margin-bottom: 20px;}
+  
+.content_container
+{ width: 330px;
+  margin: 20px 10px 0 0;
+  float: left;}
+  
+ div.content1 {
+    border: #000 solid 2px;
+    clear: left;
+    padding: 2em;
+}
+
+div.content1.inactive {
+	display: none;
+}
+
+
+ol#toc {
+    height: 2em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ol#toc a {
+    background: #000 url(tabs.gif);
+    color: #efefef;
+    display: block;
+    float: left;
+    height: 2em;
+    padding-left: 10px;
+    text-decoration: none;
+}
+
+ol#toc a:hover {
+    background-color: #222;
+    background-position: 0 -120px;
+}
+
+ol#toc a:hover span {
+    background-position: 100% -120px;
+}
+
+ol#toc li {
+    float: left;
+    margin: 0 1px 0 0;
+}
+
+ol#toc li a.active {
+    background-color: #000;
+    background-position: 0 -60px;
+    color: #fff;
+    font-weight: bold;
+}
+
+ol#toc li a.active span {
+    background-position: 100% -60px;
+}
+
+ol#toc span {
+    background: url(tabs.gif) 100% 0;
+    display: block;
+    line-height: 2em;
+    padding-right: 10px;
+}
+
+
+
+
+ol#toc1 {
+    height: 2em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ol#toc1 a {
+    background: #000 url(tabs.gif);
+    color: #efefef;
+    display: block;
+    float: left;
+    height: 2em;
+    padding-left: 10px;
+    text-decoration: none;
+}
+
+ol#toc1 a:hover {
+    background-color: #222;
+    background-position: 0 -120px;
+}
+
+ol#toc1 a:hover span {
+    background-position: 100% -120px;
+}
+
+ol#toc1 li {
+    float: left;
+    margin: 0 1px 0 0;
+}
+
+ol#toc1 li a.active {
+    background-color: #000;
+    background-position: 0 -60px;
+    color: #fff;
+    font-weight: bold;
+}
+
+ol#toc1 li a.active span {
+    background-position: 100% -60px;
+}
+
+ol#toc1 span {
+    background: url(tabs.gif) 100% 0;
+    display: block;
+    line-height: 2em;
+    padding-right: 200px;
+}
