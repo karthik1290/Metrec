@@ -1,12 +1,5 @@
 # Automation Challenge Playwright
 
-This covers the following parts:
-
-**1. Basic functionalities check**\
-**2. Login functionality**\
-**3. Destination and date selection**\
-**4. Offer selection**\
-**5. Offer page**
 
 ## Tools and technologies
 
@@ -14,6 +7,56 @@ This covers the following parts:
 - [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [Allure reports](https://allurereport.org/docs/)
 - [Github Actions](https://docs.github.com/en/actions)
+
+# Playwright Coding Challenge
+
+Welcome to the Playwright Coding Challenge repository! This project showcases a series of tasks completed using Playwright, an end-to-end testing framework.
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Setup](#setup)
+- [Completed Tasks](#completed-tasks)
+- [Running Tests](#running-tests)
+- [License](#license)
+
+## Introduction
+
+This repository contains the completed tasks for the Playwright Coding Challenge. Each task demonstrates different capabilities of Playwright, from basic navigation to advanced testing scenarios.
+
+## Setup
+
+To set up the project locally, follow these steps:
+
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/playwright-coding-challenge.git
+    cd playwright-coding-challenge
+    ```
+
+2. **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+## Completed Tasks
+
+The following tasks have been completed in this repository:
+
+
+**1. Basic functionalities check**\
+**2. Login functionality**\
+**3. Destination and date selection**\
+**4. Offer selection**\
+**5. Offer page**
+
+
+## Running Tests
+
+To run the Playwright tests, use the following command:
+
+```bash
+npx playwright test
 
 ## Setting up
 
