@@ -6,7 +6,7 @@ This covers the following parts:
 **2. Login functionality**\
 **3. Destination and date selection**\
 **4. Offer selection**\
-**5. Offer page**\
+**5. Offer page**
 
 ## Tools and technologies
 
